@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron" style="background-color:#1daeff">
+        <h2>Aplicación Clasificación de Genero</h2>
+        <p>Usando Machine Learning</p>
+    </div>
+</div>
+
+<div class="">
+    <form method="POST" action="{{ url_for('predict')}}">
+        <input type="text" name="namequery">
+        <button type="submit" class="btn btn-primary">
+            Predecir
+        </button>
+    </form>
+</div>
+
+{% endblock %}
+{% block sytles %}
+{{super()}}
+
+<link rel="stylesheet"
+href="{{url_for('.static', filename='css/styels.css')}}">
+{% endblock %}
